@@ -1,0 +1,206 @@
+<div class="content">
+    <header  class="header header--">
+        <div  class="section__inner header__inner">
+            <div  class="u-width-1/1 u-display-flex">
+                <a  class="header__logo"  href="/">
+                    <img [src] = "logo">
+                    </a>
+                <div class="u-display-flex u-flex-direction-column u-flex-1@md u-align-items-flex-end">
+                    <div  class="u-align-items-center u-display-none u-display-flex@md">
+                        <svg  aria-hidden="true"   class="svg svg--phone svg--25 call-to-action__icon u-margin-right-sm"></svg>
+                        <p  class="header__contact js-call-center-info" data-fuse="" data-fuse-format="1-###-###-####" data-fuse-name="ES-SOE-FUSE-PERMA-BANNER"  style="visibility: visible;">1-844-874-5016</p>
+                    </div>
+                    <nav  class="navigation">
+                        
+                        <div  style="height:30px;text-align:center">
+                            <div  style="width: 155px;margin:auto">
+                                <i style="float:left;">
+                                    <div  style="width: 20px;height:20px;">
+                                        <svg aria-hidden="true" class="svg-inline--fa fa-phone fa-w-16 fa-lg"
+                                            data-icon="phone" data-prefix="fas" focusable="false" role="img"
+                                            viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                            <path  class=""  d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+                                                fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                </i>
+                                <i style="float:left;margin-left:15px;font-weight: bold;">1-833-429-7598</i>
+                            </div>
+                        </div>
+                        <div class="needhelp">
+                            <b><a href="" >Need help?</a></b>
+                        </div>
+                       
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="orderlist" >
+            <div class="col-md-3">
+                <a [routerLink]="['../../sign1',param]">
+                    <h3 >1</h3>
+                    <span>Offers</span>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a [routerLink]="['../../sign3',param]">
+                    <h3 class="active">2</h3>
+                    <span>Service address</span>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a [routerLink]="['../../sign4',param]">
+                    <h3 >3</h3>
+                    <span>Customer information</span>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a [routerLink]="['../../sign5',param]">
+                    <h3 >4</h3>
+                    <span>Confirmation</span>
+                </a>
+            </div>
+        </div>
+        <div class="submain">
+            <div class="col-md-3 left">
+                <label>Your Selected Electronic Plan</label>
+                <div class="planexpression">
+                    <h3>Avarage Price</h3>
+                    <h1>7.4<i>$</i></h1>
+                    <label>Per KW</label><br>
+                    <label>based on 1000kWh/mo</label><br>
+                    <div class="detail">
+                        <label class="left"><b>PLAN NAME:</b></label>
+                        <label class="right">Gexa Saver Deluxe</label>
+                    </div>
+                    <div class="detail">
+                        <label class="left"><b>RATE TYPE:</b></label>
+                        <label class="right">Fixed</label>
+                    </div>
+                    <div class="detail">
+                        <label class="left"><b>ENTRY CANCELLATION:</b></label>
+                        <label class="right">$150</label>
+                    </div>
+                    <button>TERMS OF SERVICE</button>
+                    <button>TERMS OF SERVICE</button>
+                    <button>TERMS OF SERVICE</button>
+                </div>
+            </div>            
+            
+            <div class="col-md-9 left" style="text-align:left;padding-top:30px">
+                <b>Service Address</b>
+                <div class="row">
+                    <div class="left col-md-6">
+                        <label>Service Address</label>                       
+                        <jqxComboBox [width]="250" [height]="35"  [source]="source" id="serviceaddress" (onChange)="getaddressdata()"></jqxComboBox>                      
+                        
+                    </div>
+                    <div class="left col-md-4">
+                        <label>ESIID</label>
+                        <input type="text" id="esiid" disabled>
+                    </div>
+                    <div class="left col-md-2">
+                        <input type="checkbox" id="billingaddress" (click) = "billingaddress()"><label style="font-size:12px">Billing Address is the same as service address</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="left col-md-3">
+                        <label>City</label>
+                        <input type="text" id="city" disabled>
+                    </div>
+                    <div class="left col-md-3">
+                        <label>State</label>
+                        <input type="text" id="state" disabled>
+                    </div>
+                    <div class="left col-md-3">
+                        <label>Zip Code</label>
+                        <input type="text" id="zipcode" disabled>
+                    </div>
+                </div>
+                <b>Billing Address</b>
+                <div class="row">
+                    <div class="left col-md-6">
+                        <label>Service Address</label>
+                        <input type="text" id="billingserviceaddress">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="left col-md-3">
+                        <label>City</label>
+                        <input type="text" id="billingcity" >
+                    </div>
+                    <div class="left col-md-3">
+                        <label>State</label>
+                        <input type="text" id="billingstate" >
+                    </div>
+                    <div class="left col-md-3">
+                        <label>Zip Code</label>
+                        <input type="text" id="billingzipcode" >
+                    </div>
+                </div>
+                <b>Average monthly kwh usage</b>
+                <div class="row">
+                    <div class="left col-md-4">
+                        <label>Average monthly kwh usage</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <b>Are you moving to a new address or switching to a new provider?</b>
+                <div class="row switching">
+                    <input name="switching" id="switch1" type ="radio" (click)="switch_display(1)"><label style="font-size:13px">I am switching plan at my current address</label><br>
+                    <input name="switching" id="switch2" type ="radio" checked (click)="switch_display(2)"><label style="font-size:13px">I am moving to a new address</label>
+                </div>
+                <div class="row" id="businessdays">
+                    <input  type="checkbox" (click)="switch_display(3)"><label style="font-size:13px">Start my service within the next seven business days(no additional fees)</label>
+                </div>
+                <b class="startdate">When would like to start service?</b>
+                
+                <input class="col-md-5 startdate" type="date"  style="padding-left:40px">
+                <i class="startdate" style="width:15px;margin-top: -49px; display: block;  position: relative;  margin-left: 13px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="36.449px" height="36.448px" viewBox="0 0 36.449 36.448" style="width:15px; enable-background:new 0 0 36.449 36.448;" xml:space="preserve">
+                        <g>
+                            <g>
+                                <rect fill="#ccc" x="12.858" y="14.626" width="4.596" height="4.089"/>
+                                <rect fill="#ccc" x="18.996" y="14.626" width="4.595" height="4.089"/>
+                                <rect fill="#ccc" x="25.128" y="14.626" width="4.596" height="4.089"/>
+                                <rect fill="#ccc" x="6.724" y="20.084" width="4.595" height="4.086"/>
+                                <rect fill="#ccc" x="12.858" y="20.084" width="4.596" height="4.086"/>
+                                <rect fill="#ccc" x="18.996" y="20.084" width="4.595" height="4.086"/>
+                                <rect fill="#ccc" x="25.128" y="20.084" width="4.596" height="4.086"/>
+                                <rect fill="#ccc" x="6.724" y="25.54" width="4.595" height="4.086"/>
+                                <rect fill="#ccc" x="12.858" y="25.54" width="4.596" height="4.086"/>
+                                <rect fill="#ccc" x="18.996" y="25.54" width="4.595" height="4.086"/>
+                                <rect fill="#ccc" x="25.128" y="25.54" width="4.596" height="4.086"/>
+                                <path fill="#ccc" d="M31.974,32.198c0,0.965-0.785,1.75-1.75,1.75h-24c-0.965,0-1.75-0.785-1.75-1.75V12.099h-2.5v20.099    c0,2.343,1.907,4.25,4.25,4.25h24c2.344,0,4.25-1.907,4.25-4.25V12.099h-2.5V32.198z"/>
+                                <path fill="#ccc" d="M30.224,3.948h-1.098V2.75c0-1.517-1.197-2.75-2.67-2.75c-1.474,0-2.67,1.233-2.67,2.75v1.197h-2.74V2.75    c0-1.517-1.197-2.75-2.67-2.75c-1.473,0-2.67,1.233-2.67,2.75v1.197h-2.74V2.75c0-1.517-1.197-2.75-2.67-2.75    c-1.473,0-2.67,1.233-2.67,2.75v1.197H6.224c-2.343,0-4.25,1.907-4.25,4.25v2h2.5h27.5h2.5v-2    C34.474,5.855,32.568,3.948,30.224,3.948z M11.466,7.646c0,0.689-0.525,1.25-1.17,1.25s-1.17-0.561-1.17-1.25V2.75    c0-0.689,0.525-1.25,1.17-1.25s1.17,0.561,1.17,1.25V7.646z M19.546,7.646c0,0.689-0.525,1.25-1.17,1.25s-1.17-0.561-1.17-1.25    V2.75c0-0.689,0.525-1.25,1.17-1.25s1.17,0.561,1.17,1.25V7.646z M27.626,7.646c0,0.689-0.525,1.25-1.17,1.25    c-0.646,0-1.17-0.561-1.17-1.25V2.75c0-0.689,0.524-1.25,1.17-1.25c0.645,0,1.17,0.561,1.17,1.25V7.646z"/>
+                            </g>
+                        </g>
+                     </svg>
+                </i> 
+                <p id="note" style="margin-top:10px">Your service start date may be delayed due to a permit being reqired to complete your enrollment. If a permit is required, you will be contacted within two business days.</p>
+                <div class="row" style="margin-top:45px">
+                    <a [routerLink]="['../../sign1',param]" class="left">
+                        <i style="padding-left:10px">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 31.494 31.494" style="width:15px;enable-background:new 0 0 31.494 31.494;" xml:space="preserve">
+                                <path style="fill:#fff;" d="M10.273,5.009c0.444-0.444,1.143-0.444,1.587,0c0.429,0.429,0.429,1.143,0,1.571l-8.047,8.047h26.554  c0.619,0,1.127,0.492,1.127,1.111c0,0.619-0.508,1.127-1.127,1.127H3.813l8.047,8.032c0.429,0.444,0.429,1.159,0,1.587  c-0.444,0.444-1.143,0.444-1.587,0l-9.952-9.952c-0.429-0.429-0.429-1.143,0-1.571L10.273,5.009z"/>
+                                
+                            </svg>
+                        </i>
+                        Back to Plans
+                        
+                    </a>
+                    <a [routerLink]="['../../sign4',param]" class="right">Continue
+                        <i style="padding-left:10px">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 31.49 31.49" style="enable-background:new 0 0 31.49 31.49;width:17px" xml:space="preserve">
+                                <path style="fill:#fff;" d="M21.205,5.007c-0.429-0.444-1.143-0.444-1.587,0c-0.429,0.429-0.429,1.143,0,1.571l8.047,8.047H1.111  C0.492,14.626,0,15.118,0,15.737c0,0.619,0.492,1.127,1.111,1.127h26.554l-8.047,8.032c-0.429,0.444-0.429,1.159,0,1.587  c0.444,0.444,1.159,0.444,1.587,0l9.952-9.952c0.444-0.429,0.444-1.143,0-1.571L21.205,5.007z"/>
+                            </svg>
+                        </i>
+                    </a>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+

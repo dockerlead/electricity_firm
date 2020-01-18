@@ -1,0 +1,172 @@
+
+<div class="content">
+    <header  class="header header--">
+        <div  class="section__inner header__inner">
+            <div  class="u-width-1/1 u-display-flex">
+                <a  class="header__logo"  href="/">
+                    <img [src] = "logo">
+                    </a>
+                <div class="u-display-flex u-flex-direction-column u-flex-1@md u-align-items-flex-end">
+                    <div  class="u-align-items-center u-display-none u-display-flex@md">
+                        <svg  aria-hidden="true"   class="svg svg--phone svg--25 call-to-action__icon u-margin-right-sm"></svg>
+                        <p  class="header__contact js-call-center-info" data-fuse="" data-fuse-format="1-###-###-####" data-fuse-name="ES-SOE-FUSE-PERMA-BANNER"  style="visibility: visible;">1-844-874-5016</p>
+                    </div>
+                    <nav  class="navigation">
+                        
+                        <div  style="height:30px;text-align:center">
+                            <div  style="width: 155px;margin:auto">
+                                <i style="float:left;">
+                                    <div  style="width: 20px;height:20px;">
+                                        <svg aria-hidden="true" class="svg-inline--fa fa-phone fa-w-16 fa-lg"
+                                            data-icon="phone" data-prefix="fas" focusable="false" role="img"
+                                            viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                            <path  class=""  d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+                                                fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                </i>
+                                <i style="float:left;margin-left:15px;font-weight: bold;">1-833-429-7598</i>
+                            </div>
+                        </div>
+                        <div class="needhelp">
+                            <b><a href="" >Need help?</a></b>
+                        </div>
+                       
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+  
+    <div class="main">
+        <div class="orderlist" >
+           
+            <div class="col-md-3">
+                <a [routerLink]="['../../sign1',param]">
+                    <h3 class="active">1</h3>
+                    <span>Offers</span>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a [routerLink]="['../../sign3',param]">
+                    <h3 >2</h3>
+                    <span>Service address</span>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a [routerLink]="['../../sign4',param]">
+                    <h3 >3</h3>
+                    <span>Customer information</span>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a [routerLink]="['../../sign5',param]">
+                    <h3 >4</h3>
+                    <span>Confirmation</span>
+                </a>
+            </div>
+        </div>
+        <div class="submain">
+            <h3>Are you moving to new address or switching to a new provider?</h3>
+            <div id="foundrate">
+                <label>We found <b>{{nums}} </b>electric rates for zip code</label>
+                <input id="zipcode" value="" (keyup) = "savezipcode()"/>
+                <a (click)="getenergyrate()" style="cursor:pointer">Get New Rates
+                    <i style="padding-left:10px">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 31.49 31.49" style="enable-background:new 0 0 31.49 31.49;width:17px" xml:space="preserve">
+                            <path style="fill:#fff;" d="M21.205,5.007c-0.429-0.444-1.143-0.444-1.587,0c-0.429,0.429-0.429,1.143,0,1.571l8.047,8.047H1.111  C0.492,14.626,0,15.118,0,15.737c0,0.619,0.492,1.127,1.111,1.127h26.554l-8.047,8.032c-0.429,0.444-0.429,1.159,0,1.587  c0.444,0.444,1.159,0.444,1.587,0l9.952-9.952c0.444-0.429,0.444-1.143,0-1.571L21.205,5.007z"/>
+                        </svg>
+                    </i>
+                </a>
+            </div>
+            <div class="searchterm">
+                
+                <div class="term" *ngFor="let value of data| paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+                    <p><b>{{value['EnergyProviderShortName']}} </b></p>
+                    <div class="price">
+                        <h2>{{value['EnergyRate']}}<i>$</i></h2>
+                        <p>Energy Rate</p>
+                    </div>
+                    <div class="expression">
+                        <span>Term: </span>
+                        <i>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="36.449px" height="36.448px" viewBox="0 0 36.449 36.448" style="width:15px; enable-background:new 0 0 36.449 36.448;" xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <rect fill="#ccc" x="12.858" y="14.626" width="4.596" height="4.089"/>
+                                        <rect fill="#ccc" x="18.996" y="14.626" width="4.595" height="4.089"/>
+                                        <rect fill="#ccc" x="25.128" y="14.626" width="4.596" height="4.089"/>
+                                        <rect fill="#ccc" x="6.724" y="20.084" width="4.595" height="4.086"/>
+                                        <rect fill="#ccc" x="12.858" y="20.084" width="4.596" height="4.086"/>
+                                        <rect fill="#ccc" x="18.996" y="20.084" width="4.595" height="4.086"/>
+                                        <rect fill="#ccc" x="25.128" y="20.084" width="4.596" height="4.086"/>
+                                        <rect fill="#ccc" x="6.724" y="25.54" width="4.595" height="4.086"/>
+                                        <rect fill="#ccc" x="12.858" y="25.54" width="4.596" height="4.086"/>
+                                        <rect fill="#ccc" x="18.996" y="25.54" width="4.595" height="4.086"/>
+                                        <rect fill="#ccc" x="25.128" y="25.54" width="4.596" height="4.086"/>
+                                        <path fill="#ccc" d="M31.974,32.198c0,0.965-0.785,1.75-1.75,1.75h-24c-0.965,0-1.75-0.785-1.75-1.75V12.099h-2.5v20.099    c0,2.343,1.907,4.25,4.25,4.25h24c2.344,0,4.25-1.907,4.25-4.25V12.099h-2.5V32.198z"/>
+                                        <path fill="#ccc" d="M30.224,3.948h-1.098V2.75c0-1.517-1.197-2.75-2.67-2.75c-1.474,0-2.67,1.233-2.67,2.75v1.197h-2.74V2.75    c0-1.517-1.197-2.75-2.67-2.75c-1.473,0-2.67,1.233-2.67,2.75v1.197h-2.74V2.75c0-1.517-1.197-2.75-2.67-2.75    c-1.473,0-2.67,1.233-2.67,2.75v1.197H6.224c-2.343,0-4.25,1.907-4.25,4.25v2h2.5h27.5h2.5v-2    C34.474,5.855,32.568,3.948,30.224,3.948z M11.466,7.646c0,0.689-0.525,1.25-1.17,1.25s-1.17-0.561-1.17-1.25V2.75    c0-0.689,0.525-1.25,1.17-1.25s1.17,0.561,1.17,1.25V7.646z M19.546,7.646c0,0.689-0.525,1.25-1.17,1.25s-1.17-0.561-1.17-1.25    V2.75c0-0.689,0.525-1.25,1.17-1.25s1.17,0.561,1.17,1.25V7.646z M27.626,7.646c0,0.689-0.525,1.25-1.17,1.25    c-0.646,0-1.17-0.561-1.17-1.25V2.75c0-0.689,0.524-1.25,1.17-1.25c0.645,0,1.17,0.561,1.17,1.25V7.646z"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </i>
+                        <span>{{value['TermLength']}} months </span>
+                        <i>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="width:18px; enable-background:new 0 0 512 512;" xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path fill="#ccc" d="M409.6,204.8H384V128C384,57.421,326.579,0,256,0S128,57.421,128,128v76.8h-25.6c-14.14,0-25.6,11.46-25.6,25.6v256    c0,14.14,11.46,25.6,25.6,25.6h307.2c14.14,0,25.6-11.46,25.6-25.6v-256C435.2,216.26,423.74,204.8,409.6,204.8z M153.6,128    c0-56.559,45.841-102.4,102.4-102.4S358.4,71.441,358.4,128v76.8H153.6V128z M409.6,486.4H102.4v-256h307.2V486.4z"/>
+                                    </g>
+                                </g>
+                                <g>
+                                    <g>
+                                        <path fill="#ccc" d="M256,307.2c-21.171,0-38.4,17.229-38.4,38.4c0,16.666,10.735,30.737,25.6,36.045V422.4h25.6v-40.755    c14.865-5.299,25.6-19.379,25.6-36.045C294.4,324.429,277.171,307.2,256,307.2z M256,358.4c-7.066,0-12.8-5.734-12.8-12.8    c0-7.066,5.734-12.8,12.8-12.8c7.066,0,12.8,5.734,12.8,12.8C268.8,352.666,263.066,358.4,256,358.4z"/>
+                                    </g>
+                                
+                                </g>
+                            </svg>
+                        </i>
+                        <span>Fixed</span><br>
+                        <a href="#">Plan Details and Pricing</a><br>
+                        <input type="checkbox"><label>Compare this plan</label>
+                    </div>
+                    <div class="brain" >
+                        <img *ngIf="value.EnergyProviderShortName === 'Engie'" [src]='icon2'>
+                        <img *ngIf="value.EnergyProviderShortName === 'APG&E'" [src]='icon3'>
+                    </div>
+                    <div class="order">
+                        <a [routerLink]="['../../sign3',param]">Order Online
+                            <i style="padding-left:10px">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 31.49 31.49" style="enable-background:new 0 0 31.49 31.49;width:17px" xml:space="preserve">
+                                    <path style="fill:#fff;" d="M21.205,5.007c-0.429-0.444-1.143-0.444-1.587,0c-0.429,0.429-0.429,1.143,0,1.571l8.047,8.047H1.111  C0.492,14.626,0,15.118,0,15.737c0,0.619,0.492,1.127,1.111,1.127h26.554l-8.047,8.032c-0.429,0.444-0.429,1.159,0,1.587  c0.444,0.444,1.159,0.444,1.587,0l9.952-9.952c0.444-0.429,0.444-1.143,0-1.571L21.205,5.007z"/>
+                                </svg>
+                            </i>
+                        </a>
+                    </div>
+                </div>
+                <pagination-controls *ngIf="nums > 0" (pageChange)="p = $event"></pagination-controls>
+
+                
+                <div class="searchmethod">
+                    <label>Provider</label>
+                    <select (change)="onFilterBrand($event)">
+                        <option value="All">All provider</option>
+                        <option value="Engie">Engie</option>
+                        <option value="APG&E">APG&E</option>
+                    </select>
+                    <label>Plan Term</label><br>
+                    <npn-slider [multiRange]="true" [min]="0" [max]="60" [minSelected]="0" [maxSelected]="20" (onChange)="onSliderChange($event)">
+                    </npn-slider> 
+                    <p>Selected Values: {{currentValues | json}}</p>
+                    <label>Rate Type</label><br>
+                    <input type ="checkbox"><i>Fixed</i><br>
+
+                    <label>Plan Featured</label><br>
+                    <input type ="checkbox"><i>Basic Electrocity</i><br>
+
+                    <button type="button" class="button" style="text-align:center;padding:15px;background: #4E68B4;border-radius:5px;">Reset Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

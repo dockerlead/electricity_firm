@@ -1,0 +1,175 @@
+.content{
+    height:100%;
+    background:#ffd9b3;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height:774px;
+}
+.content .header{
+    background:transparent;
+    padding-bottom:0;
+    padding-top:50px;
+}
+.content .needhelp{
+    text-align:center;
+    
+}
+.content .needhelp a{
+    color:#000;
+}
+.content .u-display-flex{
+    display : block !important;
+    position: relative;
+    top:0;
+}
+.main{
+    top:45px;
+    background-color:#ffd9b3;
+    height:2210px;
+}
+.content .main .orderlist a:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
+.content .main .orderlist .col-md-3{
+    margin-top:20px;
+}
+.content .main .orderlist h3{
+    display:inline;
+    padding:10px 16px;
+    background-color:#D0D1D3;
+    color:#fff;
+    border-radius: 32px;
+    border:none;
+}
+.content .main .orderlist h3.active{
+    background-color:#39B7D8;
+    
+}
+.content .main .orderlist span{
+    position: relative;
+    top:-5px;
+    color:#888;
+    left: 17px;
+    font-size: 16px;
+}
+.content .main .submain{
+    width:80%;
+    margin:auto;
+    text-align: center;
+}
+.content .submain .col-md-3{
+    margin-top:20px;
+
+}
+.content .submain .col-md-3 .planexpression{
+    border-radius: 14px;
+    background-color:#EBEAFF;
+    height: 450px;
+}
+.content .submain .col-md-3 .planexpression h1{
+    padding:10px 0;
+    margin-top:-10px;
+}
+.content .submain .col-md-3 .planexpression h1 i{
+    font-size: 22px;
+    position: relative;
+    top: -22px;
+    left: 9px;
+}
+.content .submain .col-md-3 .planexpression label{
+    font-size: 12px;
+    margin-bottom:-3px;
+}
+.content .submain .col-md-3 .planexpression .detail{
+    width:80%;
+    margin:auto;
+    margin-top:10px;
+    border-bottom:1px dashed #ccc;
+    height: 20px;
+}
+.content .submain .col-md-3 .planexpression button{
+    padding:10px 10px;
+    background:#fff;
+    width: 100px;
+    font-size: 11px;
+    color:#000;
+    display:inline;
+    margin:5px;
+}
+.content .submain .col-md-9 b{
+    display: block;
+    margin-top:20px;
+}
+.content .submain .col-md-9 input{
+    padding:5px;
+}
+.content .submain .col-md-9 .col-md-3{
+    margin-top:0;
+}
+.content .submain .col-md-9 input[type="radio"]{
+    position: relative;
+    top:5px;
+    margin:0 15px;
+}
+.content .submain .col-md-9 input[type="radio"]:focus, input[type="checkbox"]:focus{
+    outline: none;
+}
+.content .submain .col-md-9 a{
+    text-align:center;
+    color:#fff;
+    padding:15px;
+    background: #4E68B4;
+    border-radius:5px;
+    margin-right:10px;
+    width:175px;
+}
+@media (min-width:1200px){
+    .content .u-display-flex{
+        top:-30px;
+    }
+    .hearder{
+        padding-top:0;
+    }
+    .main{
+        width:100%;
+        margin:auto;
+        top:150px;
+        height:960px;
+    }
+    .orderlist{
+        width:70%;
+        margin:auto;
+    }
+    .col-md-3{
+        
+        float:left;
+    }
+}
+@media (max-width:768px){
+    .switching label{
+        width:75% ;
+    }
+    .switching input{
+        position: relative;
+        top:-6px !important;
+    }
+    .content .submain .col-md-9 a{
+        display: block;
+        margin: auto;
+        margin-bottom: auto;
+        margin-bottom: 10px;
+    }
+    .main{
+        height: 1620px;
+        
+    }
+    .u-display-flex{
+        text-align: center;
+    }
+    .content .main .submain{
+        width:100%;
+    }
+    .content .submain .col-md-9{
+        background-color:#ffd9b3;
+    }
+}
