@@ -44,3 +44,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+#DB volume and large dump
+/database/db_init/*
+/database/db_volume/*
