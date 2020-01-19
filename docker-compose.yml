@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+    angular:
+        container_name: angular-container
+        build: .
+        ports:
+            - "80:4200"
+        restart: always
+    express:
+        container_name: express-container
+        build: api
+        ports:
+            - "4000:4000"
+        depends_on:  
+            - db
+        environment: 
+            - DATABASE_HOST=db
+        restart: always
+    db:
+        image: mysql:5.6
+        container_name: mysql-container
+        environment:
+            - MYSQL_DATABASE=hansper2_electricity
+            - MYSQL_ROOT_PASSWORD=password
+        ports:
+            - "3306:3306"
+        volumes:
+            - ./database:/docker-entrypoint-initdb.d
+    pma:
+        image: phpmyadmin/phpmyadmin
+        environment:
+            PMA_HOST: db
+            PMA_PORT: 3306
+            MYSQL_ROOT_PASSWORD: "password"
+        ports:
+            - "8080:80"
+        links:
+            - db:db
