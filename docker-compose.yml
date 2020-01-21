@@ -7,7 +7,7 @@ services:
         ports:
             - "80:4200"
         restart: always
-    express:
+    api:
         container_name: express-container
         build: api
         ports:
@@ -18,17 +18,15 @@ services:
             - DATABASE_HOST=db
         restart: always
     db:
-        image: mysql:5.6
         container_name: mysql-container
-        environment:
-            - MYSQL_DATABASE=hansper2_electricity
-            - MYSQL_ROOT_PASSWORD=password
+        build: db
         ports:
             - "3306:3306"
         volumes:
-            - ./database/db_init:/docker-entrypoint-initdb.d
-            - mysql_db_data:/var/lib/mysql
-    pma:
+            #- ./db/init:/docker-entrypoint-initdb.d (DB init)
+            - mysql_data:/var/lib/mysql
+    phpmyadmin:
+        container_name: phpmyadmin-container
         image: phpmyadmin/phpmyadmin
         environment:
             PMA_HOST: db
@@ -39,4 +37,4 @@ services:
         links:
             - db:db
 volumes:
-    mysql_db_data:
+    mysql_data:

@@ -8,7 +8,7 @@ import { HttpClient} from '@angular/common/http';
 })
 export class CustomerService {
  
-  uri = 'http://18.220.186.57:4000';
+  uri = 'api:4000';
 
   constructor(private http: HttpClient) { }
   

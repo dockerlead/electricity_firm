@@ -1,0 +1,9 @@
+FROM mysql:5.6
+
+ENV MYSQL_ROOT_PASSWORD !QAZXSW@
+ENV MYSQL_DATABASE hansper2_electricity
+ENV MYSQL_USER taldev
+ENV MYSQL_PASSWORD !QAZXSW@
+
+ADD ./dump/hansper2_electricity.sql /
+EXPOSE 3306
