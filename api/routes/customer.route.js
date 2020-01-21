@@ -41,8 +41,8 @@ module.exports = {
   
   
   getEnergyRate :(req,res)=>{
-    console.log(JSON.stringify(req.body));
-    var query = "SELECT epd.EnergyProviderShortName, upd.UtilityProviderShortName, czd.CongestionZoneShortName, pmf.TermLength, pmf.EnergyRate FROM PriceMatrixFact pmf JOIN energyproviderdim epd ON pmf.EnergyProviderKey = epd.EnergyProviderId JOIN utilityproviderdim upd ON pmf.UtilityProviderKey = upd.UtilityProviderKey JOIN congestionzonedim czd ON pmf.CongestionZoneKey = czd.CongestionZoneKey JOIN congestionzonezipcodemappingfact czzcmf ON pmf.CongestionZoneKey = czzcmf.CongestionZoneKey AND pmf.EnergyProviderKey = czzcmf.EnergyProviderKey WHERE czzcmf.ZipCode = '"+req.body.zipcode+"' AND pmf.UtilityProviderKey = 1 AND pmf.ServiceStartDateKey = '"+req.body.startmonth+"' AND pmf.TermLength >= "+req.body.planterm[0]+" AND pmf.TermLength <= "+req.body.planterm[1]+" And pmf.AnnualVolumeLowerBound<=0 AND pmf.AnnualVolumeUpperBound>=0 AND pmf.LoadFactor=0 ";
+    //console.log(JSON.stringify(req.body));
+    var query = "SELECT epd.EnergyProviderShortName, upd.UtilityProviderShortName, czd.CongestionZoneShortName, pmf.TermLength, pmf.EnergyRate FROM pricematrixfact pmf JOIN energyproviderdim epd ON pmf.EnergyProviderKey = epd.EnergyProviderId JOIN utilityproviderdim upd ON pmf.UtilityProviderKey = upd.UtilityProviderKey JOIN congestionzonedim czd ON pmf.CongestionZoneKey = czd.CongestionZoneKey JOIN congestionzonezipcodemappingfact czzcmf ON pmf.CongestionZoneKey = czzcmf.CongestionZoneKey AND pmf.EnergyProviderKey = czzcmf.EnergyProviderKey WHERE czzcmf.ZipCode = '"+req.body.zipcode+"' AND pmf.UtilityProviderKey = 1 AND pmf.ServiceStartDateKey = '"+req.body.startmonth+"' AND pmf.TermLength >= "+req.body.planterm[0]+" AND pmf.TermLength <= "+req.body.planterm[1]+" And pmf.AnnualVolumeLowerBound<=0 AND pmf.AnnualVolumeUpperBound>=0 AND pmf.LoadFactor=0 ";
     if(req.body.brand != "All"){
       query += " AND epd.EnergyProviderShortName = '"+req.body.brand+"'";
     }
