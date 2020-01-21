@@ -8,7 +8,7 @@ import { HttpClient} from '@angular/common/http';
 })
 export class CustomerService {
  
-  uri = 'api:4000';
+  uri = 'http://api:4000';
 
   constructor(private http: HttpClient) { }
   
@@ -39,7 +39,6 @@ export class CustomerService {
     return this
            .http
            .post(`${this.uri}/getEnergyRate`,obj);
-    
   }
  
 }
