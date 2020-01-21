@@ -12,29 +12,4 @@ services:
         build: api
         ports:
             - "4000:4000"
-        depends_on:  
-            - db
-        environment: 
-            - DATABASE_HOST=db
         restart: always
-    db:
-        container_name: mysql-container
-        build: db
-        ports:
-            - "3306:3306"
-        volumes:
-            #- ./db/init:/docker-entrypoint-initdb.d (DB init)
-            - mysql_data:/var/lib/mysql
-    phpmyadmin:
-        container_name: phpmyadmin-container
-        image: phpmyadmin/phpmyadmin
-        environment:
-            PMA_HOST: db
-            PMA_PORT: 3306
-            MYSQL_ROOT_PASSWORD: "password"
-        ports:
-            - "8080:80"
-        links:
-            - db:db
-volumes:
-    mysql_data:
